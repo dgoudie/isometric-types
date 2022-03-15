@@ -1,8 +1,8 @@
-export interface WorkoutSchedule {
+export interface IWorkoutSchedule {
     userId: string;
-    days: WorkoutScheduleDay[];
+    days: IWorkoutScheduleDay[];
 }
 
-export interface WorkoutScheduleDay {
+export interface IWorkoutScheduleDay {
     exercises: string[];
 }

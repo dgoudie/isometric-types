@@ -36,11 +36,32 @@ export interface IExercise {
     userId: string;
     name: string;
     setCount: number;
-    timePerSetInSeconds?: number;
-    minimumRecommendedRepetitions?: number;
-    maximumRecommendedRepetitions?: number;
     breakTimeInSeconds: number;
     primaryMuscleGroup: ExerciseMuscleGroup;
     secondaryMuscleGroups?: ExerciseMuscleGroup[];
     exerciseType: ExerciseType;
+    /**
+     * only populated if {@link exerciseType} is 'weighted' or 'assisted'
+     */
+    minimumRecommendedRepetitions?: number;
+    /**
+     * only populated if {@link exerciseType} is 'weighted' or 'assisted'
+     */
+    maximumRecommendedRepetitions?: number;
+    /**
+     * only populated if {@link exerciseType} is 'timed'
+     */
+    timePerSetInSeconds?: number;
+}
+
+export interface IExerciseWithBasicHistory extends IExercise {
+    lastPerformed: Date | string;
+    /**
+     * only populated if {@link exerciseType} is 'weighted' or 'assisted'
+     */
+    personalBestInPounds?: number;
+    /**
+     * only populated if {@link exerciseType} is 'rep_based'
+     */
+    personalBestInReps?: number;
 }
