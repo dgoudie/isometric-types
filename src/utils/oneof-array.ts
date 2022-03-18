@@ -1,4 +1,4 @@
-export function stringLiterals<T extends string>(...args: T[]): T[] {
+export function literals<T extends string | number>(...args: T[]): T[] {
     return args;
 }
 export type ElementOf<T extends ReadonlyArray<unknown>> =

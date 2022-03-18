@@ -1,6 +1,6 @@
-import { ElementOf, stringLiterals } from '../utils';
+import { ElementOf, literals } from '../utils';
 
-export const ExerciseMuscleGroups = stringLiterals(
+export const ExerciseMuscleGroups = literals(
     'shoulders',
     'chest',
     'forearms',
@@ -16,14 +16,13 @@ export const ExerciseMuscleGroups = stringLiterals(
     'hamstrings',
     'calves',
     'lats',
-    'lower',
     'glutes',
     'lower back'
 );
 
 export type ExerciseMuscleGroup = ElementOf<typeof ExerciseMuscleGroups>;
 
-export const ExerciseTypes = stringLiterals(
+export const ExerciseTypes = literals(
     'weighted',
     'assisted',
     'rep_based',
