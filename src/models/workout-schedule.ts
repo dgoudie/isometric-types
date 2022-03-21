@@ -4,5 +4,7 @@ export interface IWorkoutSchedule {
 }
 
 export interface IWorkoutScheduleDay {
+    _id: string;
+    nickname: string;
     exercises: string[];
 }
