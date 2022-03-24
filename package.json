@@ -1,6 +1,6 @@
 {
     "name": "@dgoudie/isometric-types",
-    "version": "1.0.2",
+    "version": "1.0.3-1",
     "description": "types for isometric",
     "main": "dist/index.js",
     "files": [
