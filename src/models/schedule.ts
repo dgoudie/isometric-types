@@ -15,4 +15,5 @@ export interface IScheduleDayWithExercises
     extends Omit<IScheduleDay, 'exercises'> {
     exercises: IExercise[];
     dayNumber: number;
+    dayCount: number;
 }

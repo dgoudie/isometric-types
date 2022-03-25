@@ -1,6 +1,6 @@
 {
     "name": "@dgoudie/isometric-types",
-    "version": "1.0.3-2",
+    "version": "1.0.4",
     "description": "types for isometric",
     "main": "dist/index.js",
     "files": [
@@ -10,7 +10,8 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "tsc": "tsc"
+        "tsc": "tsc",
+        "prepare": "tsc"
     },
     "repository": {
         "type": "git",

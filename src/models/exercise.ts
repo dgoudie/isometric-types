@@ -32,6 +32,7 @@ export const ExerciseTypes = literals(
 export type ExerciseType = ElementOf<typeof ExerciseTypes>;
 
 export interface IExercise {
+    _id: string;
     userId: string;
     name: string;
     setCount: number;
