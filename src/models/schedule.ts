@@ -7,11 +7,10 @@ export interface ISchedule {
 
 export interface IScheduleDay {
     nickname: string;
-    exercises: string[];
+    exerciseIds: string[];
 }
 
-export interface IScheduleDayWithExercises
-    extends Omit<IScheduleDay, 'exercises'> {
+export interface IScheduleDayWithExercises extends IScheduleDay {
     exercises: IExercise[];
     dayNumber: number;
     dayCount: number;
