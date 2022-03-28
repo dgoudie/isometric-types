@@ -1,6 +1,6 @@
 export interface IWorkout {
     userId: string;
-    startedAt: string;
+    createdAt: string;
     endedAt?: string;
     exercises: IWorkoutExercise[];
     dayNumber: number;
