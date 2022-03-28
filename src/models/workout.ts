@@ -3,10 +3,12 @@ export interface IWorkout {
     startedAt: string;
     endedAt?: string;
     exercises: IWorkoutExercise[];
+    dayNumber: number;
+    nickname: string;
 }
 
 export interface IWorkoutExercise {
-    _id: string;
+    exerciseId: string;
     sets: IWorkoutExerciseSet[];
 }
 
