@@ -26,3 +26,8 @@ export interface IWorkoutExerciseSet {
      */
     complete?: boolean;
 }
+
+export type WSWorkoutUpdate =
+    | { type: 'START' }
+    | { type: 'END' }
+    | { type: 'DISCARD' };
