@@ -21,10 +21,7 @@ export interface IWorkoutExerciseSet {
      * populated for weighted and assisted exercises.
      */
     repetitions?: number;
-    /**
-     * only populated for 'timed' exercises
-     */
-    complete?: boolean;
+    complete: boolean;
 }
 
 export type WSWorkoutUpdate =

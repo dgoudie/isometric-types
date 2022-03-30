@@ -6,6 +6,7 @@ export interface ISchedule {
 }
 
 export interface IScheduleDay {
+    _id: string;
     nickname: string;
     exerciseIds: string[];
 }
