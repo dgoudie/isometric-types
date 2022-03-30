@@ -27,4 +27,10 @@ export interface IWorkoutExerciseSet {
 export type WSWorkoutUpdate =
     | { type: 'START' }
     | { type: 'END' }
-    | { type: 'DISCARD' };
+    | { type: 'DISCARD' }
+    | {
+          type: 'PERSIST_SET';
+          exerciseIndex: number;
+          setIndex: number;
+          set: IWorkoutExerciseSet;
+      };
