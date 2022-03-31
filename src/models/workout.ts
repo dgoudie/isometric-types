@@ -1,35 +1,48 @@
 export interface IWorkout {
-    userId: string;
-    createdAt: string;
-    endedAt?: string;
-    exercises: IWorkoutExercise[];
-    dayNumber: number;
-    nickname: string;
+  userId: string;
+  createdAt: string;
+  endedAt?: string;
+  exercises: IWorkoutExercise[];
+  dayNumber: number;
+  nickname: string;
 }
 
 export interface IWorkoutExercise {
-    exerciseId: string;
-    sets: IWorkoutExerciseSet[];
+  exerciseId: string;
+  sets: IWorkoutExerciseSet[];
 }
 
 export interface IWorkoutExerciseSet {
-    /**
-     * populated for weighted and assisted exercises. Should be negative for assisted exercises.
-     */
-    resistanceInPounds?: number;
-    /**
-     * populated for weighted and assisted exercises.
-     */
-    repetitions?: number;
-    complete: boolean;
+  /**
+   * populated for weighted and assisted exercises. Should be negative for assisted exercises.
+   */
+  resistanceInPounds?: number;
+  /**
+   * populated for weighted and assisted exercises.
+   */
+  repetitions?: number;
+  complete: boolean;
 }
 
 export type WSWorkoutUpdate =
-    | { type: 'START' }
-    | { type: 'END' }
-    | { type: 'DISCARD' }
-    | {
-          type: 'PERSIST_EXERCISE';
-          exerciseIndex: number;
-          exercise: IWorkoutExercise;
-      };
+  | { type: 'START' }
+  | { type: 'END' }
+  | { type: 'DISCARD' }
+  | {
+      type: 'PERSIST_SET_COMPLETE';
+      exerciseIndex: number;
+      setIndex: number;
+      complete: boolean;
+    }
+  | {
+      type: 'PERSIST_SET_REPETITIONS';
+      exerciseIndex: number;
+      setIndex: number;
+      repetitions: number | undefined;
+    }
+  | {
+      type: 'PERSIST_SET_RESISTANCE';
+      exerciseIndex: number;
+      setIndex: number;
+      resistanceInPounds: number | undefined;
+    };
