@@ -29,8 +29,7 @@ export type WSWorkoutUpdate =
     | { type: 'END' }
     | { type: 'DISCARD' }
     | {
-          type: 'PERSIST_SET';
+          type: 'PERSIST_EXERCISE';
           exerciseIndex: number;
-          setIndex: number;
-          set: IWorkoutExerciseSet;
+          exercise: IWorkoutExercise;
       };

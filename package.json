@@ -1,32 +1,32 @@
 {
-    "name": "@dgoudie/isometric-types",
-    "version": "1.0.11",
-    "description": "types for isometric",
-    "main": "dist/index.js",
-    "files": [
-        "src",
-        "dist"
-    ],
-    "types": "dist/index.d.ts",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "tsc": "tsc",
-        "prepare": "tsc"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/dgoudie/isometric-types.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/dgoudie/isometric-types/issues"
-    },
-    "homepage": "https://github.com/dgoudie/isometric-types#readme",
-    "devDependencies": {
-        "typescript": "^4.6.2"
-    },
-    "peerDependencies": {
-        "typescript": "^4"
-    }
+  "name": "@dgoudie/isometric-types",
+  "version": "1.0.12",
+  "description": "types for isometric",
+  "main": "dist/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "prepare": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgoudie/isometric-types.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgoudie/isometric-types/issues"
+  },
+  "homepage": "https://github.com/dgoudie/isometric-types#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "typescript": "^4"
+  }
 }
