@@ -21,6 +21,10 @@ export interface IWorkoutExerciseSet {
    * populated for weighted and assisted exercises.
    */
   repetitions?: number;
+  /**
+   * populated for timed exercises.
+   */
+  timeInSeconds?: number;
   complete: boolean;
 }
 
