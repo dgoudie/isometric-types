@@ -1,67 +1,63 @@
 import { ElementOf, literals } from '../utils';
+import { IWorkout, IWorkoutExercise, IWorkoutExerciseSet } from './workout';
 
 export const ExerciseMuscleGroups = literals(
-    'shoulders',
-    'chest',
-    'forearms',
-    'obliques',
-    'quads',
-    'cardio',
-    'biceps',
-    'abs',
-    'adductors',
-    'traps',
-    'triceps',
-    'abductors',
-    'hamstrings',
-    'calves',
-    'lats',
-    'glutes',
-    'lower back'
+  'cardio',
+  'abductors',
+  'adductors',
+  'glutes',
+  'hamstrings',
+  'quads',
+  'calves',
+  'obliques',
+  'abs',
+  'lats',
+  'chest',
+  'traps',
+  'lower back',
+  'shoulders',
+  'forearms',
+  'triceps',
+  'biceps'
 );
 
 export type ExerciseMuscleGroup = ElementOf<typeof ExerciseMuscleGroups>;
 
 export const ExerciseTypes = literals(
-    'weighted',
-    'assisted',
-    'rep_based',
-    'timed'
+  'weighted',
+  'assisted',
+  'rep_based',
+  'timed'
 );
 
 export type ExerciseType = ElementOf<typeof ExerciseTypes>;
 
 export interface IExercise {
-    _id: string;
-    userId: string;
-    name: string;
-    setCount: number;
-    breakTimeInSeconds: number;
-    primaryMuscleGroup: ExerciseMuscleGroup;
-    secondaryMuscleGroups?: ExerciseMuscleGroup[];
-    exerciseType: ExerciseType;
-    /**
-     * only populated if {@link exerciseType} is 'weighted' or 'assisted'
-     */
-    minimumRecommendedRepetitions?: number;
-    /**
-     * only populated if {@link exerciseType} is 'weighted' or 'assisted'
-     */
-    maximumRecommendedRepetitions?: number;
-    /**
-     * only populated if {@link exerciseType} is 'timed'
-     */
-    timePerSetInSeconds?: number;
+  _id: string;
+  userId: string;
+  name: string;
+  setCount: number;
+  breakTimeInSeconds: number;
+  primaryMuscleGroup: ExerciseMuscleGroup;
+  secondaryMuscleGroups?: ExerciseMuscleGroup[];
+  exerciseType: ExerciseType;
+  /**
+   * only populated if {@link exerciseType} is 'weighted' or 'assisted'
+   */
+  minimumRecommendedRepetitions?: number;
+  /**
+   * only populated if {@link exerciseType} is 'weighted' or 'assisted'
+   */
+  maximumRecommendedRepetitions?: number;
+  /**
+   * only populated if {@link exerciseType} is 'timed'
+   */
+  timePerSetInSeconds?: number;
 }
 
-export interface IExerciseWithBasicHistory extends IExercise {
-    lastPerformed: Date | string;
-    /**
-     * only populated if {@link exerciseType} is 'weighted' or 'assisted'
-     */
-    personalBestInPounds?: number;
-    /**
-     * only populated if {@link exerciseType} is 'rep_based'
-     */
-    personalBestInReps?: number;
+export interface IExerciseExtended extends IExercise {
+  instances: IWorkout & { totalRepsForInstance: number }[];
+  lastPerformed?: Date | string;
+  bestInstance?: IWorkout & { totalRepsForInstance: number };
+  bestSet?: IWorkoutExerciseSet;
 }
