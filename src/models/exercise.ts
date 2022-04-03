@@ -55,9 +55,14 @@ export interface IExercise {
   timePerSetInSeconds?: number;
 }
 
+export interface IExerciseInstance extends IWorkout {
+  sets: (IWorkoutExerciseSet & { setIndex: number })[];
+  totalRepsForInstance: number;
+}
+
 export interface IExerciseExtended extends IExercise {
-  instances: IWorkout & { totalRepsForInstance: number }[];
+  instances: IExerciseInstance[];
   lastPerformed?: Date | string;
-  bestInstance?: IWorkout & { totalRepsForInstance: number };
+  bestInstance?: IExerciseInstance;
   bestSet?: IWorkoutExerciseSet;
 }
