@@ -1,10 +1,21 @@
 export interface IWorkout {
   userId: string;
   createdAt: string;
+  /**
+   * only populated for completed workouts
+   */
   endedAt?: string;
   exercises: IWorkoutExercise[];
   dayNumber: number;
   nickname: string;
+  /**
+   * only populated for in-progress workouts
+   */
+  checkIns?: (Date | string)[];
+  /**
+   * only populated for completed workouts
+   */
+  durationInSeconds?: number;
 }
 
 export interface IWorkoutExercise {
@@ -49,4 +60,9 @@ export type WSWorkoutUpdate =
       exerciseIndex: number;
       setIndex: number;
       resistanceInPounds: number | undefined;
+    }
+  | {
+      type: 'REPLACE_EXERCISE';
+      exerciseIndex: number;
+      newExerciseId: string;
     };
