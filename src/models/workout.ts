@@ -1,4 +1,5 @@
 export interface IWorkout {
+  _id: string;
   userId: string;
   createdAt: string;
   /**
@@ -19,6 +20,7 @@ export interface IWorkout {
 }
 
 export interface IWorkoutExercise {
+  _id: string;
   exerciseId: string;
   sets: IWorkoutExerciseSet[];
 }
