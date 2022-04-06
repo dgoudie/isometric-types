@@ -1,3 +1,5 @@
+import { IExercise } from './exercise';
+
 export interface IWorkout {
   _id: string;
   userId: string;
@@ -20,8 +22,7 @@ export interface IWorkout {
 }
 
 export interface IWorkoutExercise {
-  _id: string;
-  exerciseId: string;
+  exercise: IExercise;
   sets: IWorkoutExerciseSet[];
 }
 
