@@ -1,4 +1,4 @@
-import { ExerciseMuscleGroup, IExercise } from './exercise';
+import { ExerciseMuscleGroup, ExerciseType, IExercise } from './exercise';
 
 export interface IWorkout {
   _id: string;
@@ -25,6 +25,7 @@ export interface IWorkoutExercise {
   exercise: {
     _id: string;
     name: string;
+    exerciseType: ExerciseType;
     primaryMuscleGroup: ExerciseMuscleGroup;
   };
   sets: IWorkoutExerciseSet[];
