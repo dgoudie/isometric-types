@@ -66,3 +66,7 @@ export interface IExerciseExtended extends IExercise {
   bestInstance?: IExerciseInstance;
   bestSet?: IWorkoutExerciseSet;
 }
+
+export interface IExerciseWithHistory extends IExercise {
+  instances: IWorkoutExercise[];
+}
