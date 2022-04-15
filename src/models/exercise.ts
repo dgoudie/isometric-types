@@ -53,20 +53,12 @@ export interface IExercise {
    * only populated if {@link exerciseType} is 'timed'
    */
   timePerSetInSeconds?: number;
-}
 
-export interface IExerciseInstance extends IWorkout {
-  sets: (IWorkoutExerciseSet & { setIndex: number })[];
-  totalRepsForInstance: number;
+  createdAt: Date | string;
 }
 
 export interface IExerciseExtended extends IExercise {
-  instances: IExerciseInstance[];
   lastPerformed?: Date | string;
-  bestInstance?: IExerciseInstance;
+  bestInstance?: IWorkoutExercise & { totalRepsForInstance: number };
   bestSet?: IWorkoutExerciseSet;
-}
-
-export interface IExerciseWithHistory extends IExercise {
-  instances: IWorkoutExercise[];
 }

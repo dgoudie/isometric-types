@@ -3,7 +3,7 @@ import { ExerciseMuscleGroup, ExerciseType, IExercise } from './exercise';
 export interface IWorkout {
   _id: string;
   userId: string;
-  createdAt: string;
+  createdAt: Date | string;
   /**
    * only populated for completed workouts
    */
@@ -22,13 +22,12 @@ export interface IWorkout {
 }
 
 export interface IWorkoutExercise {
-  exercise: {
-    _id: string;
-    name: string;
-    exerciseType: ExerciseType;
-    primaryMuscleGroup: ExerciseMuscleGroup;
-  };
+  _id: string;
+  name: string;
+  exerciseType: ExerciseType;
+  primaryMuscleGroup: ExerciseMuscleGroup;
   sets: IWorkoutExerciseSet[];
+  performedAt: Date | string;
 }
 
 export interface IWorkoutExerciseSet {
