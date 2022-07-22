@@ -72,4 +72,9 @@ export type WSWorkoutUpdate =
       type: 'REPLACE_EXERCISE';
       exerciseIndex: number;
       newExerciseId: string;
+    }
+  | {
+      type: 'ADD_EXERCISE';
+      exerciseId: string;
+      index: number;
     };
