@@ -77,4 +77,8 @@ export type WSWorkoutUpdate =
       type: 'ADD_EXERCISE';
       exerciseId: string;
       index: number;
+    }
+  | {
+      type: 'DELETE_EXERCISE';
+      index: number;
     };
