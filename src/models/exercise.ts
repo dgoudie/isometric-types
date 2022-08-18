@@ -1,5 +1,5 @@
-import { ElementOf, literals } from '../utils';
-import { IWorkout, IWorkoutExercise, IWorkoutExerciseSet } from './workout';
+import { ElementOf, literals } from '../utils/index.js';
+import { IWorkout, IWorkoutExercise, IWorkoutExerciseSet } from './workout.js';
 
 export const ExerciseMuscleGroups = literals(
   'cardio',

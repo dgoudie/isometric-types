@@ -1,4 +1,4 @@
-import { ExerciseMuscleGroup, ExerciseType, IExercise } from './exercise';
+import { ExerciseMuscleGroup, ExerciseType } from './exercise.js';
 
 export interface IWorkout {
   _id: string;

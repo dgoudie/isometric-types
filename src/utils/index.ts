@@ -1,1 +1,1 @@
-export * from './oneof-array';
+export * from './oneof-array.js';
